@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Web App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+        body{
+            background: #363e97;
+            position: relative;
+            overflow: hidden;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            box-shadow: 0px 0px 100px #ffffff;
+            transition: .3s ease;
+            z-index: 55;
+            border-radius: 50px;
+            filter: blur(10px);
+        }
+        .card:hover{
+            filter: blur(0px);
+            box-shadow: 0px 0px 50px #42b3ff;
+            transform: scale(1.4);
+            
+        }
+        .card-title{
+            text-transform: uppercase;
+        }
+        .fieldinput{
+            padding: 5px;
+            font-weight: 600;
+            border-radius: 10px;
+            outline: none;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.452);
+            transition: .2s ease;
+            text-align: center;
+        }
+        .fieldinput:focus{
+            box-shadow: 0px 3px 10px rgb(0, 0, 0);
+
+        }
+        .btn{
+            font-weight: 600;
+            color: aliceblue;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.452);
+            transition: .2s ease;
+        }
+        .btn:hover{
+            color: aliceblue;
+            box-shadow: 0px 10px 10px #ffc107;
+        }
+       
+        video{
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 01;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="card text-center" style="width: 18rem">
+        <img src="https://i.pinimg.com/originals/06/c4/f7/06c4f70ec5931e2342e703e8a3f0a253.png" style="border-radius: 50px;" alt="IMg" />
+        <div class="card-body" style="transition: .3s ease-in-out;">
+          <h3 class="card-title" style="transition: .3s ease-in-out;"></h3>
+          <h6 class="card-text"></h6>
+          <input type="text" class="fieldinput" placeholder="City Name" >
+          <a href="#" class="btn btn-warning my-2" id="search_btn" onclick="getWeather()">Search city Name</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js"></script>
+</html>
